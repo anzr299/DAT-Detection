@@ -5,7 +5,7 @@ _base_ = [
     '../_base_/default_runtime.py'
 ]
 
-pretrained = '<path-to-pretrained-model>'
+load_from = '<path-to-pretrained-model>'
 
 model = dict(
     backbone=dict(
@@ -28,8 +28,7 @@ model = dict(
         use_conv_patches=True,
         ksizes=[9, 7, 5, 3],
         nat_ksizes=[7, 7, 7, 7],
-        drop_path_rate=0.0,
-        init_cfg=dict(type='Pretrained', checkpoint=pretrained)
+        drop_path_rate=0.0
     ),
     neck=dict(in_channels=[64, 128, 256, 512])
 )
